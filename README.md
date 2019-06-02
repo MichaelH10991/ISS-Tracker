@@ -1,4 +1,4 @@
-# Where is the Satellite repo
+# ISS Tracker Repo
 
 ## Running the code
 
@@ -20,3 +20,7 @@
 ### 3. Run the server
 
 `nodemon server.js`
+
+### 4. Run localhost
+
+`localhost:8081`
