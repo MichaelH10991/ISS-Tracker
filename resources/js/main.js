@@ -8,29 +8,13 @@ async function get_data() {
   console.log(longitude)
   document.getElementById("lat").textContent = latitude
   document.getElementById("long").textContent = longitude
+
+  let point = L.icon({
+    iconUrl: "resources/images/point.png",
+    iconSize: [150, 150]
+  })
+
+  L.marker([latitude, longitude], { icon: point }).addTo(iss_map)
 }
 
-function create_map() {
-  const iss_map = L.map("map").setView([0, 0], 0)
-
-  const attribution =
-    '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-
-  const tile_url = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-  const tiles = L.tileLayer(tile_url, { attribution })
-  tiles.addTo(iss_map)
-  L.tileLayer(
-    "https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}",
-    {
-      attribution:
-        'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-      maxZoom: 18,
-      id: "mapbox.streets",
-      accessToken: "your.mapbox.access.token"
-    }
-  ).addTo(iss_map)
-}
-
-create_map()
-get_data()
-//setInterval(get_data, 2000)
+setInterval(get_data, 2000)
