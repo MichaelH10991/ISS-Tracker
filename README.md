@@ -11,7 +11,7 @@
 
 ### 1. Clone the repo
 
-`git clone <the repo>`
+`git clone https://github.com/MichaelH10991/ISS-Tracker`
 
 ### 2. Install dependencies
 
