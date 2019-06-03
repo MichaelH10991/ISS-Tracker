@@ -3,7 +3,7 @@ const iss_map = L.map("map", {
   zoomSnap: 0.25
 }).setView([0, 0], 0)
 
-function create_map() {
+create_map = () => {
   const attribution =
     '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 
